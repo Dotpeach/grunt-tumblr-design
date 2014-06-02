@@ -55,7 +55,7 @@ Handlebars is used for templating.
 
 `/contents` is where your template content will go. 
 
-### Generate your email templates
+### Generate your templates
 
 In terminal, run `grunt`. This will:
 
