@@ -29,7 +29,7 @@ Clone this repo, cd to the directory, run `npm install` to install the necessary
 
 ```
 git clone https://github.com/leemunroe/grunt-email-design.git
-cd grunt-email-design
+cd grunt-tumblr-design
 npm install
 grunt
 ```
@@ -44,9 +44,8 @@ This project uses [SCSS](http://sass-lang.com/). You don't need to touch the .cs
 
 For changes to CSS, modify the .scss files.
 
-Media queries and responsive styles are in a separate style sheet so that they don't get inlined. Note that only a few clients support media queries e.g. iOS Mail app.
 
-### Email templates and content
+### Templates and content
 
 Handlebars is used for templating.
 
