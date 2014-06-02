@@ -1,12 +1,25 @@
 <!DOCTYPE html>
-<html>
+<html lang="{block:English}en{/block:English}{block:French}fr{/block:French}{block:German}de{/block:German}{block:Japanese}ja{/block:Japanese}{block:Italian}it{/block:Italian}{block:Spanish}es{/block:Spanish}{block:Polish}pl{/block:Polish}">
 <head>
 	<meta name="viewport" content="width=device-width" />
 	<meta charset="UTF-8">
-	<title>Theme 1</title>
+	<title>{Title}{block:PostTitle} // {PostTitle}{/block:PostTitle}</title>
 
 	<!-- Favicon -->
-	<link rel="icon" href="../src/img/favicon.png">
+	<link rel="shortcut icon" href="{Favicon}">
+	<link rel="apple-touch-icon" href="{PortraitURL-128}">
+
+	<!-- MetaDescription -->
+	{block:Description}
+		<meta name="description" content="{MetaDescription}">
+	{/block:Description}
+
+	<!-- Theme Options -->
+	<meta name="text:Disqus shortname" content="">
+	<meta name="text:Google Analytics ID" content="">
+	<meta name="if:Show RSS link" content="1">
+	<meta name="if:Show archive link" content="1">
+	<meta name="if:Show random link" content="1">
 
 	<!-- CSS INLINE -->
 	<style>
@@ -14,7 +27,16 @@
 
 		@media only screen and (max-width: 600px){h1,h2,h3,h4{font-weight:600 !important}h1{font-size:22px !important}h2{font-size:18px !important}h3{font-size:16px !important}.content,.content-wrapper{padding:10px !important}}
 
+
+		/* Users Custom CSS */
+		{CustomCSS}
 	</style>
+
+	<!-- HTML5 / IE less than IE9 -->
+	<!--[if lt IE 9]>
+		<script src="http://static.tumblr.com/vookvsa/elOly45v5/html5.js"></script>
+	<![endif]-->
+
 </head>
 
 <body>

@@ -41,6 +41,8 @@ grunt
 This workflow is optimised for creating multiple tumblr templates in a single folder. 
 You can share your dependencies with SASS partials and default.hbs layout. 
 
+* Find Tumblr variables on : http://www.tumblr.com/docs/en/custom_themes
+
 ### CSS
 
 This project uses COMPASS [SCSS](http://compass-style.org/). You don't need to touch the .css files, these are compiled automatically.
