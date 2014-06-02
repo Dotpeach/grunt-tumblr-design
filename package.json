@@ -1,14 +1,13 @@
 {
-  "name": "email-template",
+  "name": "tumblr-template",
   "version": "0.1.0",
   "devDependencies": {
+    "assemble": "^0.4.37",
     "grunt": "~0.4.4",
     "grunt-contrib-sass": "^0.7.3",
-    "assemble": "^0.4.37",
-    "grunt-mailgun": "0.0.2",
     "grunt-contrib-watch": "^0.6.1",
-    "grunt-premailer": "^0.2.5",
-    "grunt-cloudfiles": "^0.3.0",
-    "grunt-cdn": "^0.5.2"
+    "grunt-inline": "^0.3.0",
+    "grunt-mailgun": "0.0.2",
+    "grunt-premailer": "^0.2.5"
   }
 }

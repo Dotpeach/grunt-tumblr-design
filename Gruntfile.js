@@ -16,7 +16,7 @@ module.exports = function(grunt) {
           }
         },
 
-        // Assembles your email content with html layout
+        // Assembles your template content with html layout
         assemble: {
           options: {
             layoutdir: 'src/layouts',
@@ -28,17 +28,13 @@ module.exports = function(grunt) {
           }
         },
 
-        // Inlines your css
-        premailer: {
-          simple: {
-            options: {
-              removeComments: true
+        // CSS in <head>
+         inline: {
+          dist: {
+            options:{
+                tag: 'inline'
             },
-            files: [{
-                expand: true,
-                src: ['dist/*.html'],
-                dest: ''
-            }]
+            src: [ 'dist/*.html' ]
           }
         },
 
@@ -54,12 +50,12 @@ module.exports = function(grunt) {
     // Where we tell Grunt we plan to use this plug-in.
     grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('assemble');
-    grunt.loadNpmTasks('grunt-premailer');
     grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-inline');
   
 
     // Where we tell Grunt what to do when we type "grunt" into the terminal.
-    grunt.registerTask('default', ['sass','assemble','premailer']);
+    grunt.registerTask('default', ['sass','assemble', 'inline']);
 
 
 };
