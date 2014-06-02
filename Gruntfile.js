@@ -23,7 +23,7 @@ module.exports = function(grunt) {
             flatten: true
           },
           pages: {
-            src: ['src/emails/*.hbs'],
+            src: ['src/contents/*.hbs'],
             dest: 'dist/'
           }
         },
@@ -44,7 +44,7 @@ module.exports = function(grunt) {
 
         // Watches for changes to css or email templates then runs grunt tasks
         watch: {
-          files: ['src/css/scss/*','src/emails/*','src/layouts/*'],
+          files: ['src/css/scss/*','src/contents/*','src/layouts/*'],
           tasks: ['default']
         }
 
