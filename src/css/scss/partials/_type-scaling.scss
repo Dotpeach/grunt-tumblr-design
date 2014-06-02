@@ -1,0 +1,68 @@
+// TYPE SCALING, inspired by : http://type-scale.com/
+// -------------------------------------------------------
+
+// Scale : default is Augmented Fourth 
+// -------------------------------------------------------
+	
+	$scaling-value: 1.414;
+	// Augmented Fourth : 1.414;
+	// Golden Ratio : 1.618;
+	// Major Second : 1.125;
+	// Major Third: 1.250;
+	// Find more possibility on type-scale.com 
+
+
+
+// Base font-size
+// -------------------------------------------------------
+	$base-font-size:14px !default;
+
+
+// EM Conversion Mixin by PiouPiouM : https://gist.github.com/piouPiouM/5756376
+// -------------------------------------------------------
+		
+	// Convert `$to` (assumed px) to em compared to a given `$context` (assumed px)
+	@function x-em($to, $context: $base-font-size) {
+	  // Do not break the natural behavior of the null variables.
+	  @if 'null' == type-of($to) {
+	    @return $to;
+	  }
+	 
+	  @if 0 == $context {
+	    @warn "The value of the $context can not be equal to 0!";
+	  }
+	 
+	  // Assumes `$base-font-size` when the context is null.
+	  @if 'null' == type-of($context) {
+	    $context: $base-font-size;
+	  }
+	  // Avoid a syntax error in the absence of the unit "px".
+	  @if unitless($to)      { $to: $to + 0px; }
+	  @if unitless($context) { $context: $context + 0px; }
+	 
+	  @return $to / $context + 0em;
+	}
+
+
+
+// Font-size variables
+// Use those variables in your code instead of px or em value. It prevents you from updating all your files.
+	
+	// Default size : Text, links... 
+		$default-font-size:		x-em($base-font-size);
+
+
+	// Bigger sizes 
+	// TODO : Automatiser le process avec un choix du nombre de valeurs souhaitées ? (Par défaut 4 titres)
+		$big-font-1:	x-em($base-font-size * $scaling-value);
+		$big-font-2:	$big-font-1 * $scaling-value;	
+		$big-font-3:	$big-font-2 * $scaling-value;
+		$big-font-4:	$big-font-3 * $scaling-value;
+
+
+	// Small Sizes 
+	// TODO : Automatiser le process avec un choix du nombre de valeurs souhaitées ? (Par défaut 3 small)
+		$small-font-1:	x-em($base-font-size / $scaling-value);
+		$small-font-2:	$small-font-1 / $scaling-value;
+		$small-font-3:	$small-font-2 / $scaling-value;
+
