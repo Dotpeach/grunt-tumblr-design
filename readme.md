@@ -29,7 +29,7 @@ If you haven't used [Grunt](http://gruntjs.com/) before check out Chris Coyier's
 Clone this repo, cd to the directory, run `npm install` to install the necessary packages.
 
 ```
-git clone https://github.com/leemunroe/grunt-email-design.git
+git clone https://github.com/Dotpeach/grunt-tumblr-design.git
 cd grunt-tumblr-design
 npm install
 grunt
