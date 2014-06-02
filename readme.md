@@ -1,8 +1,11 @@
-# Grunt Email Design Workflow
+# Grunt Tumblr Templating Workflow
 
-Designing and testing emails is a pain. HTML tables, inline CSS, various devices and clients to test, and varying support for the latest web standards.
+This is a fork of grunt-email-design by leemunroe (https://github.com/leemunroe/grunt-email-design).
 
-This grunt task helps simplify things at the design stage.
+His wonderful work give me the idea of creating a similar workflow for Tumblr Templating.
+It's actually much simplier than his original work, as I'm using grunt-inline instead of premailer. 
+
+Tumblr asks you to put all your css & js files in the HEAD tag of your html, all those files will do it for you.
 
 1. Compiles your SCSS to CSS
 
@@ -33,7 +36,7 @@ grunt
 
 ## How it works
 
-<img src="http://i.imgur.com/yrHpTdr.jpg" width="500">
+--- 
 
 ### CSS
 
