@@ -3,15 +3,13 @@ module.exports = function(grunt) {
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
 
-        // Takes your scss files and compiles them to css
-        sass: {
+        // Takes your scss files and compiles them to css with COMPASS
+        compass: {
           dist: {
             options: {
-              style: 'expanded'
-            },
-            files: {
-              'src/css/main.css': 'src/css/scss/main.scss',
-              'src/css/responsive.css': 'src/css/scss/responsive.scss'
+              config: 'config.rb',  
+              cssDir: 'src/css',
+              sassDir: 'src/css/scss',
             }
           }
         },
@@ -38,7 +36,7 @@ module.exports = function(grunt) {
           }
         },
 
-        // Watches for changes to css or email templates then runs grunt tasks
+        // Watches for changes to css or tumblr templates then runs grunt tasks
         watch: {
           files: ['src/css/scss/*','src/contents/*','src/layouts/*'],
           tasks: ['default']
@@ -49,13 +47,14 @@ module.exports = function(grunt) {
 
     // Where we tell Grunt we plan to use this plug-in.
     grunt.loadNpmTasks('grunt-contrib-sass');
+    grunt.loadNpmTasks('grunt-contrib-compass');
     grunt.loadNpmTasks('assemble');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-inline');
   
 
     // Where we tell Grunt what to do when we type "grunt" into the terminal.
-    grunt.registerTask('default', ['sass','assemble', 'inline']);
+    grunt.registerTask('default', ['compass', 'assemble', 'inline']);
 
 
 };

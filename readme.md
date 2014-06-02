@@ -20,6 +20,7 @@ Tumblr asks you to put all your css & js files in the HEAD tag of your html, all
 * Node.js - [Install Node.js](https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager)
 * Grunt-cli and Grunt (`npm install grunt-cli -g`)
 * Ruby - [Install ruby with RVM](https://rvm.io/rvm/install)
+* Compass (`gem install compass`)
 * Grunt-inline (`npm install grunt-inline`) (https://www.npmjs.org/package/grunt-inline)
 
 ## Getting started
@@ -42,7 +43,7 @@ You can share your dependencies with SASS partials and default.hbs layout.
 
 ### CSS
 
-This project uses [SCSS](http://sass-lang.com/). You don't need to touch the .css files, these are compiled automatically.
+This project uses COMPASS [SCSS](http://compass-style.org/). You don't need to touch the .css files, these are compiled automatically.
 
 For changes to CSS, modify the .scss files.
 
