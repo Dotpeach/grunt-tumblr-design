@@ -1,6 +1,7 @@
 # Grunt Tumblr Templating Workflow
+<img src="http://www.dotpea.ch/github/tumblrgrunt.png" width="500" style="max-width:100%;">
 
-This is a fork of grunt-email-design by leemunroe (https://github.com/leemunroe/grunt-email-design).
+This is based on a fork of grunt-email-design by leemunroe (https://github.com/leemunroe/grunt-email-design). 
 
 His wonderful work give me the idea of creating a similar workflow for Tumblr Templating.
 It's actually much simplier than his original work, as I'm using grunt-inline instead of premailer. 
@@ -36,7 +37,8 @@ grunt
 
 ## How it works
 
---- 
+This workflow is optimised for creating multiple tumblr templates in a single folder. 
+You can share your dependencies with SASS partials and default.hbs layout. 
 
 ### CSS
 
@@ -51,48 +53,16 @@ Handlebars is used for templating.
 
 `/layouts` contains the standard header/footer HTML markup. You most likely will only need one layout template, but you can have as many as you like.
 
-`/emails` is where your email content will go. To start you off I've included example transactional emails based on my [simple HTML email template](https://github.com/leemunroe/html-email-template).
+`/contents` is where your template content will go. 
 
 ### Generate your email templates
 
 In terminal, run `grunt`. This will:
 
 * Compile your SCSS to CSS
-* Generate your email layout and content
+* Generate your template layout and content
 * Inline your CSS
 
 See the output HTML in the `dist` folder. Open them and preview it the browser.
 
 Alternatively run `grunt watch`. This will check for any changes you make to your .scss and .hbs templates, then automatically run the tasks. Saves you having to run grunt every time.
-
-### Send the email to yourself
-
-* Sign up for a [Mailgun](http://www.mailgun.com) account (it's free)
-* Open up `Gruntfile.js`
-* Replace 'MAILGUN_KEY' with your actual Mailgun API key
-* Change the sender and recipient to your own email address (or whoever you want to send it to)
-
-Run `grunt send --template=transaction.html`. This will email out the template you specify.
-
-Change 'transaction.html' to the name of the email template you want to send.
-
-### How to test with Litmus
-
-If you have a [Litmus](http://www.litmus.com) account and want to test the email in multiple clients/devices, create a new test in Litmus, copy the email address they tell you to send the email to, open up `Gruntfile.js` and paste it where the recipient goes. Then run `grunt send --template=TEMPLATE_NAME.html` to send the email to Litmus.
-
-
-### CDN and working with image assets
-
-If your email contains images you'll want to serve them from a CDN. This Gruntfile has support for Rackspace Cloud Files ([pricing](http://www.rackspace.com/cloud/files/pricing/)).
-
-<img src="http://i.imgur.com/oO5gfkZ.jpg" width="500">
-
-* Sign up for a Rackspace Cloud account (use the [Developer Discount](http://developer.rackspace.com/devtrial/) for $300 credit)
-* Create a new Cloud Files container
-* Open up `Gruntfile.js`
-* Change 'cloudfiles' settings to your settings (you can find your Rackspace API key under your account settings)
-* Make any other config changes as per [grunt-cloudfiles](https://github.com/rtgibbons/grunt-cloudfiles) instructions
-
-Run `grunt cdnify` to run the default tasks as well as upload any images to your CDN.
-
-Run `grunt cdnify send --template=branded.html` to send the email to yourself with the 'CDNified' images.
